@@ -1,0 +1,19 @@
+[project]
+name = "smarter-extension-date-calculator"
+version = "0.1.0"
+description = "Date arithmetic for LLMs: differences, adding and subtracting days, oldest, newest, and formats."
+authors = [{ name = "The Smarter Project" }]
+license = "AGPL-3.0"
+requires-python = ">=3.12"
+dependencies = ["python-dateutil>=2.8"]
+
+[project.urls]
+Homepage = "https://github.com/smarter-sh/smarter-extension-date-calculator"
+
+[tool.smarter]
+slug = "date-calculator"
+package = "date_calculator"
+display-name = "Date Calculator"
+requires-smarter = ">=0.27"
+tools = ["date_calculator.tools:DateCalculator"]
+timeout = 5
