@@ -23,4 +23,5 @@ spec:
 
 Run the tests in a Smarter development container with
 `python manage.py test_extension <path to this repository>`. CI runs them on every push and pull
-request, against a source checkout of Smarter. Release by pushing a `v<version>` tag.
+request, against a source checkout of Smarter. Releases are made by
+semantic-release, from the commits' conventional-commit types: see `release.config.js`.
