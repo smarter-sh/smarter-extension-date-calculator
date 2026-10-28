@@ -14,6 +14,10 @@ def calculate(**arguments):
 class TestDateCalculator(unittest.TestCase):
     """Test every operation, and its errors."""
 
+    def test_cache_ttl(self):
+        """The tool changes nothing, and its result doesn't depend on who asks, so a result is cached for an hour."""
+        self.assertEqual(DateCalculator.cache_ttl, 3600)
+
     def test_difference(self):
         result = calculate(dates=["1966-12-31", "2026-02-27"], operation="difference")
         self.assertEqual(result["difference_days"], 21608)

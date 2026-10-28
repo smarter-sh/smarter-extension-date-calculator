@@ -11,7 +11,9 @@
 An official [Smarter Extension](https://docs.smarter.sh/en/latest/smarter-framework/smarter-extensions.html)
 whose `date_calculator` tool does date arithmetic exactly: the difference between two dates, adding
 or subtracting days, the oldest or newest of several dates, and converting a date to the ISO, US or
-EU format. Dates may be in any common format.
+EU format. Dates may be in any common format. A result is cached for an hour (the tool's
+`cache_ttl`), so the same calculation, from any LLMClient, is answered from the cache on platforms
+that cache tool results.
 
 List it in an LLMClient's manifest:
 

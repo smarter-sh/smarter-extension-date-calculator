@@ -37,6 +37,13 @@ class DateCalculator(SmarterExtensionTool):
 
     name = "date_calculator"
     arguments_model = DateCalculatorArguments
+    cache_ttl = 3600
+    """
+    A calculation with the same dates has the same result, whoever asks.
+
+    A date without a year, e.g. "October 15", is read as this year, so for up to an hour after
+    New Year a cached result can still use the year before.
+    """
 
     def call(self, arguments: DateCalculatorArguments, context: ExtensionContext) -> JsonValue:
         try:
