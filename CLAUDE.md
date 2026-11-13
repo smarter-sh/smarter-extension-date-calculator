@@ -10,7 +10,7 @@ one or more dates in any common format, read with python-dateutil. It has no set
 A Smarter Extension is a Python package that a Smarter platform installs from the signed registry
 (smarter-sh/extensions-registry) and runs inside itself. Its tools subclass
 `smarter.apps.llmtool.extension.SmarterExtensionTool`, so the tests run against a checkout of
-smarter-sh/smarter: the sibling `../smarter` and its `smarter-app` container.
+smarter-sh/smarter: the sibling `../smarter` and its `smarter-api` container.
 
 Detailed know-how lives in the Agent Skills under `skills/` (symlinked to `.claude/skills`).
 **Load `smarter-extension-development` first for any change.**
@@ -24,7 +24,7 @@ Detailed know-how lives in the Agent Skills under `skills/` (symlinked to `.clau
 3. **Run the tests yourself**, after any change:
    `scripts/run-tests.sh --validate`. Never ask the user to.
    Report failures honestly.
-4. **The `smarter-app` container holds live cloud credentials.** Tests mock every third-party
+4. **The `smarter-api` container holds live cloud credentials.** Tests mock every third-party
    service and use placeholder keys. Don't run anything there that writes to real infrastructure.
 5. **Import only what the platform installs** (`../smarter/smarter/requirements/base.txt`), and
    use relative imports inside the package.
